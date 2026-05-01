@@ -2,7 +2,7 @@ from djongo import models
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
-    members = models.ArrayReferenceField(to='User', on_delete=models.CASCADE)
+    members = models.ArrayReferenceField(to='User', on_delete=models.CASCADE, related_name='member_teams')
 
     def __str__(self):
         return self.name
